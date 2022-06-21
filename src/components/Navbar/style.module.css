@@ -1,0 +1,25 @@
+.main {
+  width: 100%;
+  border-bottom: #e9f0f2 solid 2.5px;
+}
+
+.navlist {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+
+  background-image: linear-gradient(#97c4b8, rgba(245, 128, 136, 0));
+}
+
+.logo {
+  width: 3.5em;
+  height: 3.5em;
+  margin-top: 0.2em;
+}
