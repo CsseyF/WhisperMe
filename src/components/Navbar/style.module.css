@@ -1,25 +1,75 @@
 .main {
   width: 100%;
-  border-bottom: #e9f0f2 solid 2.5px;
-}
-
-.navlist {
-  padding: 0;
-  margin: 0;
 
   display: flex;
-  justify-content: space-around;
-  list-style: none;
   align-items: center;
 
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
 
-  background-image: linear-gradient(#97c4b8, rgba(245, 128, 136, 0));
+  background-image: linear-gradient(
+    rgba(173, 128, 245, 0.801),
+    rgba(245, 128, 136, 0)
+  );
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.27);
 }
 
 .logo {
-  width: 3.5em;
-  height: 3.5em;
-  margin-top: 0.2em;
+  width: 3em;
+
+  margin: 0.5em;
+}
+
+.navbar {
+  width: 100%;
+
+  display: flex;
+  justify-content: left;
+}
+
+.userSection {
+  margin-left: auto;
+  margin-right: 3em;
+}
+.gearButton {
+  background-color: transparent;
+  border: none;
+
+  font-size: 1.2em;
+}
+
+.gear:hover {
+  animation: rotate 1s forwards alternate linear;
+  cursor: pointer;
+}
+
+a {
+  margin: 0 4em;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
