@@ -1,4 +1,28 @@
-.main {
-  background-color: #a0fcff;
-  height: 100vh;
+.container {
+  background-color: #98c3c42a;
+  border-radius: 1em;
+  margin: 1em;
+}
+
+.whisperContainer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+.titleContainer {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+
+  color: #361357;
+
+  margin-top: 2em;
+}
+
+.titleContainer > h1 {
+  padding-left: 0.5em;
 }

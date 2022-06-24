@@ -8,7 +8,7 @@
   font-weight: bold;
 
   background-image: linear-gradient(
-    rgba(173, 128, 245, 0.801),
+    rgba(202, 128, 245, 0.801),
     rgba(245, 128, 136, 0)
   );
 
@@ -16,9 +16,9 @@
 }
 
 .logo {
-  width: 3em;
+  width: 2em;
 
-  margin: 0.5em;
+  margin: 0.3em;
 }
 
 .navbar {
@@ -46,6 +46,7 @@
 
 a {
   margin: 0 4em;
+  font-size: 0.85em;
 }
 
 a:link {

@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import style from "./style.module.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BsGear } from "react-icons/bs";
+
+import { Link } from "react-router-dom";
 
 import Logo from "../../assets/img/icon.png";
 
@@ -14,10 +17,18 @@ export default function index() {
     <header className={style.main}>
       <img className={style.logo} src={Logo} alt="WhisperMe" />
       <nav className={style.navbar}>
-        <a href="/#">Home</a>
-        <a href="/#">Credits</a>
-        <a href="/#">Login</a>
-        <a href="/#">Register</a>
+        <Link to="/">
+          <a href="/#">Home</a>
+        </Link>
+        <Link to="/credits">
+          <a href="/#">Credits</a>
+        </Link>
+        <Link to="/login">
+          <a href="/#">Login</a>
+        </Link>
+        <Link to="/register">
+          <a href="/#">Register</a>
+        </Link>
         <button hidden={collapsed}>
           <FaTimes />
         </button>

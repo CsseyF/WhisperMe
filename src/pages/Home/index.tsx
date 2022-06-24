@@ -7,7 +7,19 @@ export default function index() {
   return (
     <div className={style.main}>
       <Navbar />
-      <WhisperCard />
+
+      <div className={style.container}>
+        <div className={style.titleContainer}>
+          <h1>Your Whispers:</h1>
+        </div>
+
+        <div className={style.whisperContainer}>
+          <WhisperCard />
+          <WhisperCard />
+          <WhisperCard />
+          <WhisperCard />
+        </div>
+      </div>
     </div>
   );
 }
