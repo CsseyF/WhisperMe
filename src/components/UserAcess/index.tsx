@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useState } from "react";
 
 import style from "./style.module.css";
 
@@ -20,8 +22,20 @@ export default function index(props: Props) {
               : "Faça o login"}
           </span>
           <div className={style.body}>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(event) => {
+                //setUserName(event.target.value);
+              }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(event) => {
+                //setPassword(event.target.value);
+              }}
+            />
             <button>Accept</button>
           </div>
         </div>
