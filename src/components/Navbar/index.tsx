@@ -20,8 +20,8 @@ export default function index() {
         <Link to="/">
           <a href="/#">Home</a>
         </Link>
-        <Link to="/credits">
-          <a href="/#">Credits</a>
+        <Link to="/howitworks">
+          <a href="/#">How It Works</a>
         </Link>
         <Link to="/login">
           <a href="/#">Login</a>

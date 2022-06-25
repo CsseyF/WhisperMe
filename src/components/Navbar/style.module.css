@@ -46,7 +46,8 @@
 
 a {
   margin: 0 4em;
-  font-size: 0.85em;
+  font-size: 1.1vw;
+  color: #361357;
 }
 
 a:link {

@@ -18,12 +18,10 @@
   width: 30vw;
   height: 60vh;
 
-  background-image: linear-gradient(
-    rgba(202, 128, 245, 0.801) 4%,
+  background: rgb(109,76,83);
+  background: linear-gradient(24deg, rgba(109,76,83,1) 0%, rgba(151,234,204,1) 100%);
 
-    rgba(245, 128, 136, 0.305)
-  );
-  border-radius: 30%;
+  border-radius: 15%;
 }
 
 .titleHeader {
@@ -46,6 +44,9 @@
 .bodyContainer > span {
   margin-bottom: 1em;
   font-size: 1.4vw;
+  font-weight: bold;
+  
+  color: #361357;
 }
 
 .body {
@@ -53,6 +54,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .body > input {

@@ -1,13 +1,10 @@
 :root {
-  --out: #f2d1d1;
-  --in: #dbc1c1;
   --color3: #404040;
 }
 .main {
   min-width: 40vw;
   min-height: 30vh;
 
-  background-color: var(--out);
   display: flex;
   flex-direction: column;
 
@@ -45,7 +42,6 @@
 
   min-height: 25vh;
 
-  background-color: var(--in);
   color: var(--color3);
   margin-left: 4em;
   margin-top: -3.4em;

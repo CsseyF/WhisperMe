@@ -1,17 +1,23 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 
+import { colors } from "../../data/colors";
+
 import style from "./style.module.css";
 import Profile from "../../assets/img/profilepicture.jpg";
 
-export default function index() {
+interface Props{
+  cardColor: string;
+}
+
+export default function index(props : Props) {
   return (
-    <div className={style.main}>
+    <div style={{backgroundColor: colors[props.cardColor].lightColor}} className={style.main}>
       <div className={style.pictureTextBoxContainer}>
         <div className={style.profilePicture}>
           <img src={Profile} alt="picture" />
         </div>
-        <div className={style.textbox}>
+        <div style={{backgroundColor: colors[props.cardColor].darkColor}} className={style.textbox}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
             tempora voluptatum debitis saepe recusandae itaque omnis nulla
