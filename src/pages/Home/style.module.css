@@ -1,5 +1,9 @@
+.main {
+  padding: 2em 0;
+}
+
 .container {
-  background-color: #98c3c42a;
+  background-color: #d1d1d1;
   border-radius: 1em;
   margin: 1em;
 }

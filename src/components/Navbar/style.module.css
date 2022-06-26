@@ -1,16 +1,17 @@
 .main {
   width: 100%;
 
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
   display: flex;
   align-items: center;
 
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
 
-  background-image: linear-gradient(
-    rgba(202, 128, 245, 0.801),
-    rgba(245, 128, 136, 0)
-  );
+  background-image: linear-gradient(#8a939c, #ffffffae);
 
   border-bottom: 1px solid rgba(128, 128, 128, 0.27);
 }

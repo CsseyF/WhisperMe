@@ -7,6 +7,7 @@ import Home from "../pages/Home";
 import HowItWorks from "../pages/HowItWorks";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Sending from "../pages/Sending";
 
 export default function PublicRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function PublicRoutes() {
         <Route element={<HowItWorks />} path="/howitworks" />
         <Route element={<Register />} path="/register" />
         <Route element={<Login />} path="/login" />
+        <Route element={<Sending />} path="sendwhisper" />
       </Routes>
     </Router>
   );

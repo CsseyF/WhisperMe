@@ -3,12 +3,5 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: #c4e2e3;
-
-  background: rgb(150, 188, 190);
-  background: linear-gradient(
-    45deg,
-    rgba(150, 188, 190, 1) 65%,
-    rgba(255, 149, 156, 0.5998774509803921) 93%
-  );
+  background-color: #f0f0f0;
 }

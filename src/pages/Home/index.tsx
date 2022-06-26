@@ -16,8 +16,8 @@ export default function index() {
         <div className={style.whisperContainer}>
           <WhisperCard cardColor="Pink" />
           <WhisperCard cardColor="Green" />
-          <WhisperCard cardColor="Blue"/>
-          <WhisperCard cardColor="Yellow"/>
+          <WhisperCard cardColor="Blue" />
+          <WhisperCard cardColor="Yellow" />
         </div>
       </div>
     </div>
