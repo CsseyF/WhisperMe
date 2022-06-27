@@ -25,7 +25,7 @@ class _Api {
     const response = this._instance.post("/User/Login", {
       userName: UserName,
       password: Password,
-    });
+    },{withCredentials: true});
     return response;
   }
 
