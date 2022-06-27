@@ -67,12 +67,17 @@ export default function index() {
     })();
   }, [uploadedFile, setProfileImage]);
 
-  const handleSubmit = () => {
+  const handleSubmit = (
+    paramUsername: string,
+    Message: string,
+    CardColor: string,
+    ProfileImage: string
+  ) => {
     const response = Api.SendWhisper(
-      paramUser!,
-      message,
-      cardColor,
-      profileImage
+      paramUsername,
+      Message,
+      CardColor,
+      ProfileImage
     );
     response.then((res) => {
       if (res.status === 204) {
@@ -151,7 +156,9 @@ export default function index() {
       <button
         style={{ backgroundColor: colors[cardColor].darkColor }}
         className={style.sendButton}
-        onClick={() => handleSubmit}
+        onClick={() =>
+          handleSubmit(paramUser!, message, cardColor, profileImage)
+        }
       >
         Send
       </button>
