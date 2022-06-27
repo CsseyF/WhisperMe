@@ -30,6 +30,8 @@
 }
 
 .userSection {
+  display: flex;
+
   margin-left: auto;
   margin-right: 3em;
 }
@@ -45,7 +47,8 @@
   cursor: pointer;
 }
 
-a {
+a,
+span {
   margin: 0 4em;
   font-size: 1.1vw;
   color: #361357;

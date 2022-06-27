@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import style from "./style.module.css";
 
@@ -26,6 +26,7 @@ export default function index() {
   };
 
   let { paramUser } = useParams<{ paramUser: string }>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const readFileDataAsBase64 = async (): Promise<string> => {
@@ -65,6 +66,20 @@ export default function index() {
       setProfileImage((await readFileDataAsBase64()) ?? "");
     })();
   }, [uploadedFile, setProfileImage]);
+
+  const handleSubmit = () => {
+    const response = Api.SendWhisper(
+      paramUser!,
+      message,
+      cardColor,
+      profileImage
+    );
+    response.then((res) => {
+      if (res.status === 204) {
+        navigate("/whispersent", { replace: true });
+      }
+    });
+  };
 
   return (
     <div className={style.main}>
@@ -136,9 +151,7 @@ export default function index() {
       <button
         style={{ backgroundColor: colors[cardColor].darkColor }}
         className={style.sendButton}
-        onClick={() =>
-          Api.SendWhisper(paramUser!, message, cardColor, profileImage)
-        }
+        onClick={() => handleSubmit}
       >
         Send
       </button>

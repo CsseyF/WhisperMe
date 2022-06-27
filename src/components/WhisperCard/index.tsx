@@ -3,6 +3,8 @@ import React from "react";
 
 import { colors } from "../../data/colors";
 
+import { CgProfile } from "react-icons/cg";
+
 import style from "./style.module.css";
 
 interface Props {
@@ -20,7 +22,16 @@ export default function index(props: Props) {
     >
       <div className={style.pictureTextBoxContainer}>
         <div className={style.profilePicture}>
-          <img src={objectURL} alt="picture" />
+          {props.profileBase64 === "" || props.profileBase64 === null ? (
+            <div
+              className={style.profilePicEmpty}
+              style={{ backgroundColor: colors[props.cardColor].darkColor }}
+            >
+              <CgProfile />
+            </div>
+          ) : (
+            <img src={props.profileBase64} alt="picture" />
+          )}
         </div>
         <div
           style={{ backgroundColor: colors[props.cardColor].darkColor }}

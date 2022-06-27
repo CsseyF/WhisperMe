@@ -36,6 +36,15 @@
   cursor: pointer;
 }
 
+.profilePicEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2.5vw;
+  padding: 0.35vw;
+  border-radius: 100%;
+}
 .textbox {
   max-width: 25vw;
   min-width: 25vw;

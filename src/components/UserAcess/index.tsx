@@ -22,8 +22,8 @@ export default function index(props: Props) {
       : Api.Login(user, password);
 
     result.then((res) => {
-      console.log("STATUS: " + res.status);
       if (res.status === 204) {
+        localStorage.setItem("user", username);
         navigate("/", { replace: true });
       }
     });

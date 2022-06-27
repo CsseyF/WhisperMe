@@ -8,6 +8,7 @@ import HowItWorks from "../pages/HowItWorks";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Sending from "../pages/Sending";
+import TryYourself from "../pages/TryYourself";
 
 export default function PublicRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function PublicRoutes() {
         <Route element={<Register />} path="/register" />
         <Route element={<Login />} path="/login" />
         <Route element={<Sending />} path="/sendwhisper/:paramUser" />
+        <Route element={<TryYourself />} path="/whispersent" />
       </Routes>
     </Router>
   );
