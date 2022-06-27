@@ -1,24 +1,18 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react";
 import Api from "../../api";
 import Navbar from "../../components/Navbar";
 import WhisperCard from "../../components/WhisperCard";
 import style from "./style.module.css";
 
-export default function index() {
+const Home: React.FC = () => {
   const [cards, setCards] = useState<any[]>([]);
 
-  const whispersList = Api.ListWhisper().then((response) => {
-    function GetColor(card: any) {
-      return { name: card.color };
-    }
-    setCards(response.data?.results.map(GetColor));
-    console.log("RESPONSE DATA: " + response.data?.results);
-  });
-
-  // useEffect(() => {
-  //   console.log("API RESPONSE: " + );
-  // }, []);
+  useEffect(() => {
+    (async () => {
+      const response = await Api.ListWhisper();
+      setCards(response.data);
+    })();
+  }, []);
   return (
     <div className={style.main}>
       <Navbar />
@@ -28,8 +22,20 @@ export default function index() {
           <h1>Your Whispers:</h1>
         </div>
 
-        <div className={style.whisperContainer}></div>
+        <div className={style.whisperContainer}>
+          {cards.map((card, index) => (
+            <WhisperCard
+              key={`whispercard_${index}`}
+              message={card.message}
+              cardColor={card.color}
+              createdDate={card.createdDate}
+              profileBase64={card.profilePicture}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Home;

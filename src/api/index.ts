@@ -10,6 +10,7 @@ class _Api {
       headers: {
         "Content-Type": "application/json",
       },
+      responseType: "json",
     });
   }
 
@@ -22,10 +23,14 @@ class _Api {
   }
 
   public async Login(UserName: string, Password: string) {
-    const response = this._instance.post("/User/Login", {
-      userName: UserName,
-      password: Password,
-    },{withCredentials: true});
+    const response = this._instance.post(
+      "/User/Login",
+      {
+        userName: UserName,
+        password: Password,
+      },
+      { withCredentials: true }
+    );
     return response;
   }
 
