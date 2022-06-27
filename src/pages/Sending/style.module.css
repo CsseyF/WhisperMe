@@ -128,3 +128,18 @@
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
 }
+
+.sendButton {
+  border: none;
+  border-radius: 2em;
+  padding: 0.45em 2em;
+  margin: 1em 0;
+
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.1vw;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+}

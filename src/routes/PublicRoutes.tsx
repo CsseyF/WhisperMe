@@ -17,7 +17,7 @@ export default function PublicRoutes() {
         <Route element={<HowItWorks />} path="/howitworks" />
         <Route element={<Register />} path="/register" />
         <Route element={<Login />} path="/login" />
-        <Route element={<Sending />} path="sendwhisper" />
+        <Route element={<Sending />} path="/sendwhisper/:paramUser" />
       </Routes>
     </Router>
   );

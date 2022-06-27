@@ -1,17 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import style from "./style.module.css";
 
 import { colors } from "../../data/colors";
 import { CgProfile } from "react-icons/cg";
 import Navbar from "../../components/Navbar";
+import Api from "../../api";
 
 export default function index() {
   const colorButtons: string[] = ["Pink", "Blue", "Green", "Yellow"];
   const maxMessageLength: number = 240;
 
-  const [cardColor, setCardColor] = useState<string>("Pink");
+  const [cardColor, setCardColor] = useState<string>(
+    colorButtons[Math.floor(Math.random() * colorButtons.length)]
+  );
   const [message, setMessage] = useState<string>("");
   const [uploadedFile, setUploadedFile] = useState<File | undefined>(undefined);
   const [profileImage, setProfileImage] = useState<string>("");
@@ -19,6 +24,9 @@ export default function index() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement> | null) => {
     setUploadedFile(event?.target.files?.[0]);
   };
+
+  let { paramUser } = useParams<{ paramUser: string }>();
+
   useEffect(() => {
     const readFileDataAsBase64 = async (): Promise<string> => {
       const file = uploadedFile;
@@ -61,7 +69,7 @@ export default function index() {
   return (
     <div className={style.main}>
       <Navbar />
-      <h2>Send a whisper to Casey!</h2>
+      <h2>Send a whisper to {paramUser}!</h2>
       <div
         style={{ backgroundColor: colors[cardColor].lightColor }}
         className={style.whisperParams}
@@ -125,6 +133,15 @@ export default function index() {
           })}
         </ul>
       </div>
+      <button
+        style={{ backgroundColor: colors[cardColor].darkColor }}
+        className={style.sendButton}
+        onClick={() =>
+          Api.SendWhisper(paramUser!, message, cardColor, profileImage)
+        }
+      >
+        Send
+      </button>
     </div>
   );
 }

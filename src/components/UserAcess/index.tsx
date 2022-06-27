@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Api from "../../api";
 
 import style from "./style.module.css";
 
@@ -9,6 +11,24 @@ interface Props {
 }
 
 export default function index(props: Props) {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (user: string, password: string) => {
+    const result = props.register
+      ? Api.Register(user, password)
+      : Api.Login(user, password);
+
+    result.then((res) => {
+      console.log("STATUS: " + res.status);
+      if (res.status === 204) {
+        navigate("/", { replace: true });
+      }
+    });
+  };
+
   return (
     <div className={style.container}>
       <div className={style.main}>
@@ -26,17 +46,19 @@ export default function index(props: Props) {
               type="text"
               placeholder="Username"
               onChange={(event) => {
-                //setUserName(event.target.value);
+                setUsername(event.target.value);
               }}
             />
             <input
               type="password"
               placeholder="Password"
               onChange={(event) => {
-                //setPassword(event.target.value);
+                setPassword(event.target.value);
               }}
             />
-            <button>Accept</button>
+            <button onClick={() => handleSubmit(username, password)}>
+              Accept
+            </button>
           </div>
         </div>
       </div>
