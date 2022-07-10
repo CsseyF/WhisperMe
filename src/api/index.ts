@@ -34,6 +34,14 @@ class _Api {
     return response;
   }
 
+  public async Logout() {
+    const response = await this._instance.get("/User/Logout", {
+      withCredentials: true,
+    });
+
+    return response;
+  }
+
   public async SendWhisper(
     ReceiverUsername: string,
     Message: string,

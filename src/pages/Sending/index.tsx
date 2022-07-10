@@ -108,7 +108,15 @@ export default function index() {
                 <CgProfile />
               </button>
             )}
-            <span>{uploadedFile?.name}</span>
+            <span
+              onClick={(event) => {
+                hiddenFileInput.current?.click();
+              }}
+            >
+              {uploadedFile === undefined
+                ? "Choose a image to your whisper card!"
+                : uploadedFile?.name.substring(0, 30)}
+            </span>
           </div>
 
           <input

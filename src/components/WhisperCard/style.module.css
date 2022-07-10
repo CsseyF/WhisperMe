@@ -27,7 +27,8 @@
 }
 
 .profilePicture > img {
-  width: 3em;
+  width: 3.5em;
+  height: 3.5em;
 
   border-radius: 100%;
 
@@ -41,7 +42,7 @@
   justify-content: center;
   align-items: center;
 
-  font-size: 2.5vw;
+  font-size: 2.5em;
   padding: 0.35vw;
   border-radius: 100%;
 }

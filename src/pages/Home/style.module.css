@@ -3,9 +3,52 @@
 }
 
 .container {
-  background-color: #d1d1d1;
+  background-color: #e0e0e0;
   border-radius: 1em;
   margin: 1em;
+
+  min-height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.noWhispers {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.4vw;
+  color: #230e37;
+
+  text-align: center;
+
+  margin-top: 2em;
+}
+
+.copyButton {
+  border: none;
+  border-radius: 2em;
+  padding: 0.45em 2em;
+
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.1vw;
+
+  cursor: pointer;
+
+  /* background-color: #935bb3cc; */
+
+  background-image: linear-gradient(
+    rgba(133, 80, 164, 0.801) 4%,
+
+    rgba(245, 128, 136, 0.564)
+  );
+
+  opacity: 0.8;
+}
+
+.copyButton:hover {
+  opacity: 1;
+  transition: 0.8s;
 }
 
 .whisperContainer {
@@ -23,8 +66,6 @@
   font-weight: bold;
 
   color: #361357;
-
-  margin-top: 2em;
 }
 
 .titleContainer > h1 {

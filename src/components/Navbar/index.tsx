@@ -5,21 +5,19 @@ import { useState } from "react";
 import style from "./style.module.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BsGear } from "react-icons/bs";
-import Cookies from "js-cookie";
 
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/img/icon.png";
+
+import Api from "../../api";
 
 export default function index() {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const currentUser = localStorage.getItem("user");
 
   const handleLogout = () => {
-    Cookies.remove("token", {
-      path: "/",
-      domain: "whisper-me-api.herokuapp.com",
-    });
+    Api.Logout();
     localStorage.removeItem("user");
     window.location.reload();
   };
@@ -34,7 +32,7 @@ export default function index() {
           <a href="/#">How It Works</a>
         </Link>
 
-        {currentUser !== "" ? (
+        {currentUser === "" || currentUser == null ? (
           <>
             <Link to="/login">
               <a href="/#">Login</a>
@@ -54,7 +52,7 @@ export default function index() {
         </button>
 
         <div className={style.userSection}>
-          <span hidden={currentUser !== ""}>{currentUser}</span>
+          <span hidden={currentUser === ""}>{currentUser}</span>
           <button className={style.gearButton} onClick={handleLogout}>
             <BsGear className={style.gear} />
           </button>
